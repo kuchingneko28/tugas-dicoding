@@ -1,32 +1,26 @@
 /**
  * TODO:
- * 1. Buatlah fungsi bernama minimal dengan ketentuan berikut:
- *    - Menerima dua buah argumen number, a dan b.
- *    - Mengembalikan nilai terkecil antara a atau b.
- *    - Bila nilai keduanya sama, maka kembalikan dengan nilai a
+ * Buatlah variabel greatAuthors yang merupakan array
+ * berdasarkan hasil filter() dan map() dari books:
+ *   - Gunakan fungsi filter untuk mengembalikan nilai item books
+ *     yang hanya memiliki nilai sales lebih dari 1000000.
+ *   - Gunakan fungsi map pada books yang sudah ter-filter,
+ *     untuk mengembalikan nilai string dengan format:
+ *     - `${author} adalah penulis buku ${title} yang sangat hebat!`
  *
- *    contoh:
- *    minimal(1, 4) // output: 1
- *    minimal(3, 2) // output: 2
- *    minimal(3, 3) // output: 3
- *
- * 2. Buatlah sebuah function bernama findIndex yang menerima dua parameter, yaitu array dan number.
- *    Fungsi tersebut harus mengembalikan index dari angka yang sesuai pada array tersebut.
- *    Jika angka tidak ditemukan, maka kembalikan nilai -1.
- *
- *    contoh:
- *    findIndex([1, 2, 3, 4, 5], 3) // output: 2
- *    findIndex([1, 2, 3, 4, 5], 6) // output: -1
- *    findIndex([1, 2, 3, 4, 5], 5) // output: 4
+ * Catatan: Jangan ubah nilai atau struktur dari books
  */
 
+const books = [
+  { title: "The Da Vinci Code", author: "Dan Brown", sales: 5094805 },
+  { title: "The Ghost", author: "Robert Harris", sales: 807311 },
+  { title: "White Teeth", author: "Zadie Smith", sales: 815586 },
+  { title: "Fifty Shades of Grey", author: "E. L. James", sales: 3758936 },
+  { title: "Jamie's Italy", author: "Jamie Oliver", sales: 906968 },
+  { title: "I Can Make You Thin", author: "Paul McKenna", sales: 905086 },
+  { title: "Harry Potter and the Deathly Hallows", author: "J.K Rowling", sales: 4475152 },
+];
+
 // Tulis kode di bawah ini
-
-function minimal(a, b) {
-  return a < b ? a : b;
-}
-function findIndex([...numbers], index) {
-  return numbers.findIndex((number) => number == index);
-}
-
-console.log(findIndex([1, 2, 3, 4, 5], 6));
+const greatAuthors = books.filter((item) => item.sales > 1000000).map((x) => `${x.author} adalah penulis buku ${x.title} yang sangat hebat!`);
+console.log(greatAuthors);

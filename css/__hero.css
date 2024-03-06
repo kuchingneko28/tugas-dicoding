@@ -29,6 +29,7 @@
   .hero__desc {
     margin-block: 20px;
     text-align: center;
+    flex: 0;
   }
   .hero h1 {
     font-size: 32px;
